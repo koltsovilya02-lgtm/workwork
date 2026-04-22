@@ -79,7 +79,11 @@
 .cases, .gallery, .charts { display: grid; gap: 18px; }
 .cases { grid-template-columns: repeat(3, 1fr); }
 .gallery { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
-.charts { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+.charts {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 18px;
+}
 
 .case-card, .gallery-card, .contact-card, .process-card, .cert-card {
   overflow: hidden;
@@ -105,7 +109,8 @@
   background: #050507;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
-  height: 220px; /* ВАЖНО */
+  height: 320px; /* ВОТ ЭТО КЛЮЧ */
+  border-radius: 18px;
 }
 
 .chart-image img {
