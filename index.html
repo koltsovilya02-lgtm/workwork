@@ -76,14 +76,43 @@
       background: rgba(124,58,237,.14); color: #ddd6fe; margin-bottom: 16px; font-size: 20px;
     }
     .service-text { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.88); }
-    .cases, .gallery, .charts { display: grid; gap: 18px; }
-    .cases { grid-template-columns: repeat(3, 1fr); }
-    .gallery, .charts { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
-    .case-card, .gallery-card, .contact-card, .process-card, .cert-card { overflow: hidden; }
-    .case-image, .gallery-image, .chart-image { background: #050507; border-bottom: 1px solid var(--border); }
-    .case-image img { aspect-ratio: 16/10; object-fit: cover; object-position: top; }
-    .gallery-image img { aspect-ratio: 4/3; object-fit: cover; }
-    .chart-image img { aspect-ratio: 16/10; object-fit: cover; background: white; }
+.cases, .gallery, .charts { display: grid; gap: 18px; }
+.cases { grid-template-columns: repeat(3, 1fr); }
+.gallery { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+
+.charts {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.case-card, .gallery-card, .contact-card, .process-card, .cert-card {
+  overflow: hidden;
+}
+
+.case-image, .gallery-image, .chart-image {
+  background: #050507;
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-image img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.chart-image {
+  background: white;
+  padding: 10px;
+}
+
+.chart-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: white;
+  border-radius: 18px;
+}
     .case-content { padding: 22px; }
     .chip {
       padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(124,58,237,.22); background: rgba(124,58,237,.12); color: #ddd6fe; font-size: 12px;
@@ -157,7 +186,8 @@
     .alert.err { background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.24); color: #fee2e2; }
     footer { padding: 24px 0 50px; color: var(--muted-2); font-size: 14px; }
     @media (max-width: 1100px) {
-      .hero-grid, .process-grid, .cta-grid, .about-grid, .cases, .gallery, .charts, .services, .certs { grid-template-columns: 1fr 1fr; }
+.hero-grid, .process-grid, .cta-grid, .about-grid, .cases, .gallery, .services, .certs { grid-template-columns: 1fr 1fr; }
+.charts { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr 1fr; }
       .hero-grid { grid-template-columns: 1fr; }
       .about-grid, .cta-grid, .process-grid { grid-template-columns: 1fr; }
