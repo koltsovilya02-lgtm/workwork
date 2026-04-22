@@ -80,13 +80,24 @@
 .cases { grid-template-columns: repeat(3, 1fr); }
 .gallery { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
 
-.charts {
-  grid-template-columns: repeat(2, 1fr);
+.charts {  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 18px;
 }
+    .chart-image {
+  background: white;
+  padding: 12px;
+  border-radius: 18px;
+}
 
-.case-card, .gallery-card, .contact-card, .process-card, .cert-card {
+.chart-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: auto;
+  border-radius: 12px;
+}
+.case-card, .contact-card, .process-card, .cert-card {  
   overflow: hidden;
 }
 
@@ -185,23 +196,31 @@
     .alert.ok { background: rgba(16,185,129,.12); border-color: rgba(16,185,129,.24); color: #d1fae5; }
     .alert.err { background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.24); color: #fee2e2; }
     footer { padding: 24px 0 50px; color: var(--muted-2); font-size: 14px; }
-    @media (max-width: 1100px) {
-.hero-grid, .process-grid, .cta-grid, .about-grid, .cases, .gallery, .services, .certs { grid-template-columns: 1fr 1fr; }
-.charts { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .about-grid, .cta-grid, .process-grid { grid-template-columns: 1fr; }
-      .cert-inner { grid-template-columns: 1fr; }
-      .cert-image img { aspect-ratio: 16/10; }
-    }
-    @media (max-width: 720px) {
-      .section { padding: 68px 0; }
-      .container { padding: 0 18px; }
-      .stats, .services, .cases, .gallery, .charts, .contacts, .certs, .mini-stats, .info-pairs, .form-grid-2 { grid-template-columns: 1fr; }
-      .subheading { font-size: 28px; }
-      .about-content { padding: 24px; }
-      .cta-grid { padding: 22px; }
-    }
+@media (max-width: 1100px) {
+  .hero-grid, .process-grid, .cta-grid, .about-grid, .cases, .gallery, .services, .certs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .charts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats { grid-template-columns: 1fr 1fr; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .about-grid, .cta-grid, .process-grid { grid-template-columns: 1fr; }
+  .cert-inner { grid-template-columns: 1fr; }
+  .cert-image img { aspect-ratio: 16/10; }
+}
+@media (max-width: 720px) {
+  .section { padding: 68px 0; }
+  .container { padding: 0 18px; }
+  .stats, .services, .cases, .gallery, .charts, .contacts, .certs, .mini-stats, .info-pairs, .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .subheading { font-size: 28px; }
+  .about-content { padding: 24px; }
+  .cta-grid { padding: 22px; }
+}
   </style>
 </head>
 <body>
