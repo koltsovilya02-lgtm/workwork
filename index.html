@@ -101,12 +101,18 @@
   object-fit: cover;
 }
 
+.chart-image {
+  background: #050507;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  height: 220px; /* ВАЖНО */
+}
+
 .chart-image img {
   width: 100%;
-  aspect-ratio: 16/10;
+  height: 100%;
   object-fit: cover;
-  object-position: center top;
-  background: #fff;
+  object-position: top;
 }
 
 .case-content { padding: 22px; }
