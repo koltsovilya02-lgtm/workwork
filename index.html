@@ -77,11 +77,19 @@
     }
     .service-text { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.88); }
 .cases, .gallery, .charts { display: grid; gap: 18px; }
-.cases { grid-template-columns: repeat(3, 1fr); }
-.gallery { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+
+.cases {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 18px;
+}
+
 .charts {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   margin-top: 18px;
 }
 
@@ -89,9 +97,19 @@
   overflow: hidden;
 }
 
-.case-image, .gallery-image, .chart-image {
+.case-image, .gallery-image {
   background: #050507;
   border-bottom: 1px solid var(--border);
+}
+
+.chart-image {
+  background: #fff;
+  padding: 10px;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 260px;   /* добавили */
+  display: flex;       /* добавили */
+  align-items: center; /* добавили */
 }
 
 .case-image img {
@@ -105,19 +123,13 @@
   object-fit: cover;
 }
 
-.chart-image {
-  background: #050507;
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-  height: 320px; /* ВОТ ЭТО КЛЮЧ */
-  border-radius: 18px;
-}
-
 .chart-image img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: auto;
+  border-radius: 16px;
 }
 
 .case-content { padding: 22px; }
@@ -191,14 +203,15 @@
     }
     .alert.ok { background: rgba(16,185,129,.12); border-color: rgba(16,185,129,.24); color: #d1fae5; }
     .alert.err { background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.24); color: #fee2e2; }
-    footer { padding: 24px 0 50px; color: var(--muted-2); font-size: 14px; }
+footer { padding: 24px 0 50px; color: var(--muted-2); font-size: 14px; }
+
 @media (max-width: 1100px) {
   .hero-grid, .process-grid, .cta-grid, .about-grid, .cases, .gallery, .services, .certs {
     grid-template-columns: 1fr 1fr;
   }
 
   .charts {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .stats { grid-template-columns: 1fr 1fr; }
