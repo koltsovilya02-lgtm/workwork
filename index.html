@@ -80,30 +80,34 @@
 .cases { grid-template-columns: repeat(3, 1fr); }
 .gallery { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
 
-.charts {  grid-template-columns: repeat(2, 1fr);
+.charts {
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 18px;
 }
-    .chart-image {
-  background: white;
-  padding: 12px;
-  border-radius: 18px;
-}
 
-.chart-image img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  aspect-ratio: auto;
-  border-radius: 12px;
-}
-.case-card, .contact-card, .process-card, .cert-card {  
+.case-card, .contact-card, .process-card, .cert-card {
   overflow: hidden;
 }
 
-.case-image, .gallery-image, .chart-image {
+.case-image, .gallery-image {
   background: #050507;
   border-bottom: 1px solid var(--border);
+}
+
+.chart-image {
+  background: white;
+  padding: 12px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-image img {
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  object-position: top;
 }
 
 .gallery-image img {
@@ -111,20 +115,14 @@
   object-fit: cover;
 }
 
-.chart-image {
-  background: white;
-  padding: 10px;
-}
-
 .chart-image img {
   width: 100%;
-  height: auto;
-  aspect-ratio: auto;
+  height: 280px;
   object-fit: contain;
-  background: white;
-  border-radius: 18px;
+  border-radius: 12px;
 }
-    .case-content { padding: 22px; }
+
+.case-content { padding: 22px; }
     .chip {
       padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(124,58,237,.22); background: rgba(124,58,237,.12); color: #ddd6fe; font-size: 12px;
     }
